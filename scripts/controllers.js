@@ -67,9 +67,12 @@ define(function(require) {
 
         docitems: function() {
 
+            var controller = this
+
             var intoDocItem = function(data) {
                 return DocItemObject.create({
                     data: data,
+                    project: controller.get('controllers.application.model.project'),
                 })
             }
 

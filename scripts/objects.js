@@ -4,8 +4,6 @@ define(function(require) {
 
     var Em = require('ember')
 
-    var config = require('config')
-
     var DocItemObject = Em.Object.extend({
 
         data: null,
@@ -57,8 +55,8 @@ define(function(require) {
                 return
             }
             var line = this.get('data.line')
-            var root = Em.get(config, 'project.repo') + '/blob'
-            var version = Em.get(config, 'project.version')
+            var root = this.get('project.repo') + '/blob'
+            var version = this.get('project.version')
             return root + '/' + version + '/' + file + (line ? '#L' + line : '')
         }.property('data.file', 'data.line')
 
