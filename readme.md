@@ -22,7 +22,7 @@ An Ember.js driven, YUIDoc parsed, documentation module.
 
 ### Developing
 
-Check [todo.md](blob/master/todo.md).
+Check [todo.md](todo.md).
 
 
 <br>
