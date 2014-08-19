@@ -1,0 +1,12 @@
+- [ ] add testing
+- [ ] convert all objects to go from router ~> `FileObject`, `ModuleObject`, `ClassObject`, `ClassMemberObject`
+- [ ] convert the way project data is passed to `DocItemObject`
+- [ ] convert cross-link to have `:` instead of `#` as the delimiter
+- [ ] convert all internal `{{link-to}}`s into `{{cross-link}}`s
+- [ ] split "parameters" and "return" values {Type} definitions
+- [ ] missing "deprecated" for a class’ methods/attributes
+- [ ] missing "deprecated" for a module
+- [ ] missing "namespaces", "submodules", "fors"
+- [ ] missing "events" of a class
+- [ ] add auto `{{cross-link}}` for type definitions (internal and external)
+- [ ] hide index list when no items are visible in category a filter
