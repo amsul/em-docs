@@ -1,0 +1,32 @@
+{
+  "name": "em-docs",
+  "version": "0.0.1-0",
+  "description": "An Ember.js driven, YUIDoc parsed, documentation module.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amsul/em-docs.git"
+  },
+  "keywords": [
+    "Ember.js",
+    "documentation",
+    "docs",
+    "generator",
+    "YUIDoc",
+    "JSDoc",
+    "site"
+  ],
+  "author": {
+    "name": "Amsul",
+    "email": "reach@amsul.ca",
+    "url": "http://amsul.ca"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-yuidoc": "^0.5.2"
+  }
+}
