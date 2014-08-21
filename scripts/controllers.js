@@ -197,8 +197,12 @@ define(function(require) {
 
         updateActiveTab: function() {
             var tabName = this.get('tab')
+            var cls = this.get('model')
             var tabsObject = this.get('tabsObject')
-            tabsObject.setActiveTab(tabName)
+            var targetTab = tabsObject.data.findBy('name', tabName)
+            if ( targetTab ) {
+                tabsObject.setActiveTab(tabName)
+            }
         }.observes('tab', 'model'),
 
         toggleClassitemsVisibility: function(type, visibility) {

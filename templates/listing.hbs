@@ -3,7 +3,7 @@
     <ul class="list--unindent  list--plain">
         {{#each item in model}}
             <li>
-                {{#link-to model.type item.name}}<code>{{item.name}}</code>{{/link-to}}
+                {{#link-to model.type item.name (query-params tab="index" item='')}}<code>{{item.name}}</code>{{/link-to}}
             </li>
         {{/each}}
     </ul>
