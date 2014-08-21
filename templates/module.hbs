@@ -5,8 +5,8 @@
             <h2 class="heading  heading--two  heading--flat"><code>{{name}}</code> <span class="is-thin">module</span></h2>
             <div class="meta">
                 <div class="meta__info">Defined in {{#cross-link fileLink=definedLink}}<code>{{definedAt}}</code>{{/cross-link}}</div>
-                {{#if data.since}}
-                    <div class="meta__info">Added in v{{data.since}}</div>
+                {{#if since}}
+                    <div class="meta__info">Added in v{{since}}</div>
                 {{/if}}
             </div>
             {{md content=description}}
@@ -15,15 +15,27 @@
 
     <hr>
 
-    {{#if data.classes}}
+    {{#if classes}}
         <div class="container  container--padded  container--section">
             <h3>Classes</h3>
             <ul>
-                {{#each class in data.classes}}
+                {{#each class in classes}}
                     <li>{{#link-to "class" class}}<code>{{class}}</code>{{/link-to}}</li>
                 {{/each}}
             </ul>
         </div>
+    {{/if}}
+
+    {{#if submodules}}
+        <p>todo</p>
+    {{/if}}
+
+    {{#if fors}}
+        <p>todo</p>
+    {{/if}}
+
+    {{#if namespaces}}
+        <p>todo</p>
     {{/if}}
 
 </main>

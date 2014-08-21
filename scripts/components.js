@@ -91,7 +91,10 @@ define(function(require) {
         tagName: 'span',
 
         needs: ['application'],
-        data: Em.computed.alias('controllers.application.model'),
+
+        classes: Em.computed.alias('controllers.application.classes'),
+        classitems: Em.computed.alias('controllers.application.classitems'),
+        modules: Em.computed.alias('controllers.application.modules'),
 
         to: null,
         section: null,
@@ -109,15 +112,14 @@ define(function(require) {
         itemName: Em.computed.alias('toSplit.1'),
 
         categoryType: function() {
-            var data = this.get('data')
             var categoryName = this.get('categoryName')
-            if ( data.classes.findBy('name', categoryName) ) {
+            if ( this.get('classes').findBy('name', categoryName) ) {
                 return 'class'
             }
-            if ( data.modules.findBy('name', categoryName) ) {
+            if ( this.get('modules').findBy('name', categoryName) ) {
                 return 'module'
             }
-        }.property('data', 'categoryName'),
+        }.property('classes', 'modules', 'categoryName'),
 
         itemType: function() {
             var section = this.get('section')
@@ -127,15 +129,14 @@ define(function(require) {
                     section == 'methods' ? 'method' :
                     section
             }
-            var data = this.get('data')
             var itemName = this.get('itemName')
             var itemShortName = itemName.replace(/\(.+\)$/, '')
-            var classitem = data.classitems.findBy('name', itemShortName)
+            var classitem = this.get('classitems').findBy('name', itemShortName)
             if ( !classitem ) {
                 throw new Error('Nothing found to cross link to by the name of ' + itemName)
             }
             return classitem.itemtype
-        }.property('section', 'data', 'itemName')
+        }.property('section', 'classitems', 'itemName')
 
     })
 

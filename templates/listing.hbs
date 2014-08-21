@@ -1,0 +1,10 @@
+<div class="container__box">
+    <h3 class="heading  heading--flat">{{model.title}}</h3>
+    <ul class="list--unindent  list--plain">
+        {{#each item in model}}
+            <li>
+                {{#link-to model.type item.name}}<code>{{item.name}}</code>{{/link-to}}
+            </li>
+        {{/each}}
+    </ul>
+</div>
