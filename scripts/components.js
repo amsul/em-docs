@@ -105,7 +105,7 @@ define(function(require) {
             if ( !to ) {
                 throw new Error('A cross-link requires a "to", "section", or "fileLink" property.')
             }
-            return to.split('#')
+            return to.split(':')
         }.property('to'),
 
         categoryName: Em.computed.alias('toSplit.0'),
@@ -135,7 +135,7 @@ define(function(require) {
             if ( !classitem ) {
                 throw new Error('Nothing found to cross link to by the name of ' + itemName)
             }
-            return classitem.itemtype
+            return classitem.get('itemtype')
         }.property('section', 'classitems', 'itemName')
 
     })

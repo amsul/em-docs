@@ -8,10 +8,6 @@ define(function(require) {
 
     var DeclarationObject = Em.ObjectProxy.extend({
 
-        classes: computed.objectKeys('content.classes'),
-        fors: computed.objectKeys('content.fors'),
-        namespaces: computed.objectKeys('content.namespaces'),
-
         definedAt: function() {
             return '%@:%@'.fmt(this.get('file'), this.get('line'))
         }.property('file', 'line'),
@@ -29,28 +25,25 @@ define(function(require) {
 
     })
 
-    var FileObject = DeclarationObject.extend({
+    var CategoryObject = DeclarationObject.extend({
+        classes: computed.objectKeys('content.classes'),
+        fors: computed.objectKeys('content.fors'),
+        namespaces: computed.objectKeys('content.namespaces'),
+    })
+
+    var FileObject = CategoryObject.extend({
         modules: computed.objectKeys('content.modules'),
     })
 
-    var ModuleObject = DeclarationObject.extend({
+    var ModuleObject = CategoryObject.extend({
         submodules: computed.objectKeys('content.submodules'),
     })
 
-    var ClassObject = DeclarationObject.extend({
-
-        queryName: function(suffix) {
-            var queryName = this.get('name')
-            var params = this.get('params')
-            if ( suffix ) {
-                queryName += suffix
-            }
-            return queryName
-        }.property('name', 'params')
-
+    var ClassObject = CategoryObject.extend({
+        queryName: Em.computed.alias('name')
     })
 
-    var ClassitemObject = ClassObject.extend({
+    var ClassitemObject = DeclarationObject.extend({
 
         isHidden: false,
         isInherited: Em.computed.bool('inherits'),
@@ -72,11 +65,11 @@ define(function(require) {
 
         queryName: function() {
             var params = this.get('params')
-            var queryName = ''
+            var queryName = this.get('name')
             if ( params && params.length ) {
-                queryName += '(%@)'.fmt(params.mapProperty('name'))
+                queryName += '(%@)'.fmt(params.mapProperty('name').join('-'))
             }
-            return this._super(queryName)
+            return queryName
         }.property('params')
 
     })

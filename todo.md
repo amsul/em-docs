@@ -1,6 +1,5 @@
 - [ ] add testing
 - [ ] fix `{{cross-link}}`s missing project data
-- [ ] convert cross-link to have `:` instead of `#` as the delimiter
 - [ ] convert all internal `{{link-to}}`s into `{{cross-link}}`s
 - [ ] split "parameters" and "return" values {Type} definitions
 - [ ] missing "deprecated" for a class’ methods/attributes
