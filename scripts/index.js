@@ -3,7 +3,7 @@
     'use strict';
 
     var require = window.require = {
-        baseUrl: '/scripts',
+        baseUrl: '/docs/scripts',
         deps: ['main'],
         paths: {
             'text': '//cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text',
