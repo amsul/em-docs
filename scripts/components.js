@@ -92,18 +92,31 @@ define(function(require) {
 
         needs: ['application'],
 
+        project: Em.computed.alias('controllers.application.project'),
+        files: Em.computed.alias('controllers.application.files'),
+        modules: Em.computed.alias('controllers.application.modules'),
         classes: Em.computed.alias('controllers.application.classes'),
         classitems: Em.computed.alias('controllers.application.classitems'),
-        modules: Em.computed.alias('controllers.application.modules'),
 
         to: null,
         section: null,
-        fileLink: null,
+        file: null,
+        line: null,
+
+        fileLink: function() {
+            var file = this.get('file')
+            if ( !file ) {
+                return
+            }
+            var line = this.get('line')
+            var root = this.get('project.repo') + '/blob/master'
+            return '%@/%@'.fmt(root, file) + (line ? '#L' + line : '')
+        }.property('file', 'line'),
 
         toSplit: function() {
             var to = this.get('to')
             if ( !to ) {
-                throw new Error('A cross-link requires a "to", "section", or "fileLink" property.')
+                throw new Error('A cross-link requires a "to", "section", or "file" property.')
             }
             return to.split(':')
         }.property('to'),

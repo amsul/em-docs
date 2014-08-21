@@ -1,5 +1,4 @@
 - [ ] add testing
-- [ ] fix `{{cross-link}}`s missing project data
 - [ ] convert all internal `{{link-to}}`s into `{{cross-link}}`s
 - [ ] split "parameters" and "return" values {Type} definitions
 - [ ] missing "deprecated" for a class’ methods/attributes
@@ -8,4 +7,4 @@
 - [ ] missing "events" of a class
 - [ ] missing section for "warnings"
 - [ ] add auto `{{cross-link}}` for type definitions (internal and external)
-- [ ] hide index list when no items are visible in category a filter
+- [ ] hide index list when no items are visible in filtered category

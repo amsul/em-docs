@@ -6,24 +6,7 @@ define(function(require) {
 
     var computed = require('computed-helpers')
 
-    var DeclarationObject = Em.ObjectProxy.extend({
-
-        definedAt: function() {
-            return '%@:%@'.fmt(this.get('file'), this.get('line'))
-        }.property('file', 'line'),
-
-        definedLink: function() {
-            var file = this.get('file')
-            if ( !file ) {
-                return
-            }
-            var line = this.get('line')
-            var root = this.get('project.repo') + '/blob'
-            var version = this.get('project.version')
-            return root + '/' + version + '/' + file + (line ? '#L' + line : '')
-        }.property('file', 'line'),
-
-    })
+    var DeclarationObject = Em.ObjectProxy.extend({})
 
     var CategoryObject = DeclarationObject.extend({
         classes: computed.objectKeys('content.classes'),

@@ -8,7 +8,7 @@
                 {{~#if static}} &nbsp;<span class="capsule  capsule--static">Static</span>{{/if}}
             </h2>
             <div class="meta">
-                <div class="meta__info">Defined in {{#cross-link fileLink=definedLink}}<code>{{definedAt}}</code>{{/cross-link}}</div>
+                <div class="meta__info">Defined in {{#cross-link file=file line=line}}<code>{{file}}:{{line}}</code>{{/cross-link}}</div>
                 {{#if isExtended}}
                     <div class="meta__info">Extends {{#link-to "class" extends}}<code>{{extends}}</code>{{/link-to}}</div>
                 {{else}}{{#if isInherited}}
