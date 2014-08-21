@@ -334,6 +334,9 @@ a:focus {
 .is-color-inherited {
     color: inherit;
 }
+.is-unit {
+    white-space: nowrap;
+}
 h1,
 .is-size-one {
     font-size: 1.5rem;

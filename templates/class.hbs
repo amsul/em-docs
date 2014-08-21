@@ -43,14 +43,25 @@
             </ul>
             <div class="is-size-five  is-dimmed  is-centered  is-block">
                 Show: &nbsp;&nbsp;
-                {{~input type="checkbox" id="showInherited" checked=showInherited}}
-                <label for="showInherited">Inherited</label> &nbsp;&nbsp;
-                {{~input type="checkbox" id="showProtected" checked=showProtected}}
-                <label for="showProtected">Proctected</label> &nbsp;&nbsp;
-                {{~input type="checkbox" id="showPrivate" checked=showPrivate}}
-                <label for="showPrivate">Private</label> &nbsp;&nbsp;
-                {{~input type="checkbox" id="showDeprecated" checked=showDeprecated}}
-                <label for="showDeprecated">Deprecated</label>
+                <label for="showInherited" class="is-unit">
+                    {{~input type="checkbox" id="showInherited" checked=showInherited~}}
+                    &nbsp;Inherited
+                </label>
+                &nbsp;&nbsp;
+                <label for="showProtected" class="is-unit">
+                    {{~input type="checkbox" id="showProtected" checked=showProtected~}}
+                    &nbsp;Proctected
+                </label>
+                &nbsp;&nbsp;
+                <label for="showPrivate" class="is-unit">
+                    {{~input type="checkbox" id="showPrivate" checked=showPrivate~}}
+                    &nbsp;Private
+                </label>
+                &nbsp;&nbsp;
+                <label for="showDeprecated" class="is-unit">
+                    {{~input type="checkbox" id="showDeprecated" checked=showDeprecated~}}
+                    &nbsp;Deprecated
+                </label>
             </div>
         </div>
         {{#toggle-tabs-body isActive=indexTabObject.isActive class="tabs__body"}}
