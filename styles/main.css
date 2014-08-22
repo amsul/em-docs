@@ -44,21 +44,12 @@ table, th, td, caption,
 hr {
     margin: 0 0 1.25rem;
 }
-h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child,
-p:last-child, blockquote:last-child, pre:last-child, address:last-child,
-dl:last-child, dd:last-child, ol:last-child, ul:last-child,
-form:last-child, fieldset:last-child, legend:last-child, figure:last-child,
-table:last-child, th:last-child, td:last-child, caption:last-child,
-hr:last-child {
-    margin-bottom: 0;
-}
 
 ul, ol, dd {
     padding-left: 2.5rem;
 }
 
-ul ul,
-ol ul {
+li ul {
     list-style: square;
 }
 

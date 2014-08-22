@@ -1,10 +1,13 @@
-- [ ] add testing
-- [ ] convert all internal `{{link-to}}`s into `{{cross-link}}`s
-- [ ] split "parameters" and "return" values {Type} definitions
-- [ ] missing "deprecated" for a class’ methods/attributes
-- [ ] missing "deprecated" for a module
-- [ ] missing "namespaces", "submodules", "fors"
-- [ ] missing "events" of a class
-- [ ] missing section for "warnings"
-- [ ] add auto `{{cross-link}}` for type definitions (internal and external)
-- [ ] hide index list when no items are visible in filtered category
+
+- add testing
+- add filter states to query params
+- convert all internal `{{link-to}}`s into `{{cross-link}}`s
+- split "parameters" and "return" values {Type} definitions
+- missing "deprecated" for a class’ methods/attributes
+- missing "deprecated" for a module
+- missing "namespaces", "submodules", "fors"
+- missing "events" of a class
+- missing section for "warnings"
+- add auto `{{cross-link}}` for type definitions (internal and external)
+- add a `{{capsule}}` helper
+- hide index list when no items are visible in filtered category

@@ -81,8 +81,13 @@ define(function(require) {
 
         syncModel: function() {
 
-            var classes = this.get('allClasses')
-            var classitems = this.get('allClassitems')
+            var classes = ClassesArray.create({
+                content: this.get('allClasses')
+            })
+            var classitems = ClassitemsArray.create({
+                content: this.get('allClassitems')
+            })
+
             var name = this.get('name')
             var cls = classes.findBy('name', name)
 
@@ -100,16 +105,7 @@ define(function(require) {
             }
             /*jshint sub: false*/
 
-            var ownedClassitems = classitems.filterBy('class', name).
-                map(function(classitem) {
-                    if ( classitem.get('isExtended') ) {
-                        classitem.set('extends', null)
-                    }
-                    if ( classitem.get('isInherited') ) {
-                        classitem.set('inherits', null)
-                    }
-                    return classitem
-                })
+            var ownedClassitems = classitems.filterBy('class', name)
 
             var inheritedNames = []
 

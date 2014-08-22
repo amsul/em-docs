@@ -143,8 +143,11 @@ define(function(require) {
                     section
             }
             var itemName = this.get('itemName')
-            var itemShortName = itemName.replace(/\(.+\)$/, '')
-            var classitem = this.get('classitems').findBy('name', itemShortName)
+            if ( !itemName ) {
+                return
+            }
+            var itemParamlessName = itemName.replace(/\(.+\)$/, '')
+            var classitem = this.get('classitems').findBy('name', itemParamlessName)
             if ( !classitem ) {
                 throw new Error('Nothing found to cross link to by the name of ' + itemName)
             }

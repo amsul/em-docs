@@ -15,7 +15,7 @@ An Ember.js driven, YUIDoc parsed, documentation module.
 1. `cd` into the root of your project directory
 2. `git clone git@github.com:amsul/em-docs.git docs`
 3. Configure [`grunt-contrib-yuidoc`][] for your own project
-4. Point the `outdir` to `docs/scripts-docs/`
+4. Point the `outdir` to `docs/scripts-docs/` and set `parseOnly` to `true`
 5. Create a static server in your root directory. Eg `python -m http.server 8000`
 6. Visit `http://localhost:8000/docs`
 
